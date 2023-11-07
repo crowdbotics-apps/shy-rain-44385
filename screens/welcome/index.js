@@ -1,64 +1,57 @@
-import React from "react"
-import {
-  View,
-  Image,
-  Text,
-  ScrollView,
-  SafeAreaView,
-  StyleSheet
-} from "react-native"
+import React from "react";
+import { SafeAreaView, View, Text, Image, StyleSheet } from "react-native";
 
 const WelcomeScreen = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollView}>
-        <View style={styles.group} />
-        <View style={styles.group}>
-          <Image style={styles.logo} source={require("./logo.png")} />
-          <Text style={styles.text}>
-            Let's build something amazing together!
-          </Text>
-        </View>
-        <Text style={styles.footer}>Made with ❤️ by Crowdbotics</Text>
-      </ScrollView>
-    </SafeAreaView>
-  )
-}
+  return <SafeAreaView style={styles.container}>
+      <View style={styles.headerContainer}>
+        <Text style={styles.headerText}>Welcome!</Text>
+      </View>
+      <View style={styles.imageContainer}>
+        <Image style={styles.image} source={{
+        uri: "https://tinyurl.com/42evm3m3"
+      }} />
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>
+          We're glad you're here. Let's get started!
+        </Text>
+      </View>
+    </SafeAreaView>;
+};
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#F8F8FC",
-    height: "100%"
-  },
-  scrollView: {
     flex: 1,
+    backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "space-between",
-    padding: 20
+    justifyContent: "center"
   },
-  group: {
-    alignItems: "center"
+  headerContainer: {
+    flex: 1,
+    justifyContent: "center"
   },
-  logo: {
-    height: 180,
-    width: 180,
-    padding: 40,
-    borderRadius: 30,
-    margin: 40
+  headerText: {
+    fontSize: 36,
+    fontWeight: "bold",
+    color: "#000"
+  },
+  imageContainer: {
+    flex: 2,
+    justifyContent: "center"
+  },
+  image: {
+    width: 200,
+    height: 200
+  },
+  textContainer: {
+    flex: 1,
+    justifyContent: "center",
+    paddingHorizontal: 20
   },
   text: {
+    fontSize: 24,
     textAlign: "center",
-    fontSize: 28,
-    color: "#828AB0",
-    fontWeight: 700
-  },
-  footer: {
-    textAlign: "center",
-    fontSize: 18,
-    color: "#828AB0",
-    fontWeight: 700,
-    marginBottom: 20
+    color: "#000"
   }
-})
-
-export default WelcomeScreen
+});
+export default WelcomeScreen;
